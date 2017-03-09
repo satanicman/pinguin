@@ -1,0 +1,19 @@
+fontFace(name, font-family = name) {
+  @font-face {
+    font-family: font-family
+    src: url("../../fonts/" + name + "/" + name + ".eot")
+    src: url("../../fonts/" + name + "/" + name + ".eot?#iefix") format("embedded-opentype"), url("../../fonts/" + name + "/" + name + ".woff") format("woff"), url("../../fonts/" + name + "/" + name + ".ttf") format("truetype")
+    font-style: normal
+    font-weight: normal
+  }
+}
+
+em(value, context = default-font-size) {
+  u = unit(value)
+
+  if (u is 'px') {
+    return unit(value/context, 'em')
+  } else {
+    return unit(value, u)
+  }
+}
