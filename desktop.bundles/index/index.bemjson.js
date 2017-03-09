@@ -3,14 +3,14 @@ module.exports = {
     title: 'Главная страница',
     favicon: '/favicon.ico',
     head: [
-        { elem: 'meta', attrs: { name: 'description', content: '' } },
-        { elem: 'meta', attrs: { name: 'viewport', content: 'width=device-width, initial-scale=1' } },
-        { elem: 'css', url: 'reset.css' },
-        { elem: 'css', url: '../../node_modules/normalize.css/normalize.css' },
-        { elem: 'css', url: 'index.min.css' }
+        {elem: 'meta', attrs: {name: 'description', content: ''}},
+        {elem: 'meta', attrs: {name: 'viewport', content: 'width=device-width, initial-scale=1'}},
+        {elem: 'css', url: 'reset.css'},
+        {elem: 'css', url: '../../node_modules/normalize.css/normalize.css'},
+        {elem: 'css', url: 'index.min.css'}
     ],
-    scripts: [{ elem: 'js', url: 'index.min.js' }],
-    mods: { theme: 'base' },
+    scripts: [{elem: 'js', url: 'index.min.js'}],
+    mods: {theme: 'base'},
     content: [
         {
             block: 'header',
@@ -26,7 +26,7 @@ module.exports = {
                         content: [
                             {
                                 block: 'image',
-                                mods: { responsive: true },
+                                mods: {responsive: true},
                                 mix: {block: 'header', elem: 'logo'},
                                 alt: 'Pinguin',
                                 url: '../../img/logo.png'
@@ -53,12 +53,14 @@ module.exports = {
                                                 content: [
                                                     {
                                                         block: 'link',
-                                                        mix: {block: 'main-menu', elem: 'link', elemMods: { active: true }},
+                                                        mix: {
+                                                            block: 'main-menu',
+                                                            elem: 'link',
+                                                            elemMods: {active: true}
+                                                        },
                                                         title: 'Главная',
                                                         content: 'Главная',
-                                                        attrs: {
-                                                            href: '#'
-                                                        }
+                                                        url: '#'
                                                     }
                                                 ]
                                             },
@@ -71,9 +73,7 @@ module.exports = {
                                                         mix: {block: 'main-menu', elem: 'link'},
                                                         title: 'Услуги и цены',
                                                         content: 'Услуги и цены',
-                                                        attrs: {
-                                                            href: '#'
-                                                        }
+                                                        url: '#'
                                                     }
                                                 ]
                                             },
@@ -86,9 +86,7 @@ module.exports = {
                                                         mix: {block: 'main-menu', elem: 'link'},
                                                         title: 'Портфолио',
                                                         content: 'Портфолио',
-                                                        attrs: {
-                                                            href: '#'
-                                                        }
+                                                        url: '#'
                                                     }
                                                 ]
                                             },
@@ -101,9 +99,7 @@ module.exports = {
                                                         mix: {block: 'main-menu', elem: 'link'},
                                                         title: 'О нас',
                                                         content: 'О нас',
-                                                        attrs: {
-                                                            href: '#'
-                                                        }
+                                                        url: '#'
                                                     }
                                                 ]
                                             },
@@ -116,9 +112,7 @@ module.exports = {
                                                         mix: {block: 'main-menu', elem: 'link'},
                                                         title: 'Отзывы',
                                                         content: 'Отзывы',
-                                                        attrs: {
-                                                            href: '#'
-                                                        }
+                                                        url: '#'
                                                     }
                                                 ]
                                             },
@@ -131,9 +125,7 @@ module.exports = {
                                                         mix: {block: 'main-menu', elem: 'link'},
                                                         title: 'Блог',
                                                         content: 'Блог',
-                                                        attrs: {
-                                                            href: '#'
-                                                        }
+                                                        url: '#'
                                                     }
                                                 ]
                                             },
@@ -146,9 +138,7 @@ module.exports = {
                                                         mix: {block: 'main-menu', elem: 'link'},
                                                         title: 'Контакты',
                                                         content: 'Контакты',
-                                                        attrs: {
-                                                            href: '#'
-                                                        }
+                                                        url: '#'
                                                     }
                                                 ]
                                             }
@@ -158,11 +148,11 @@ module.exports = {
                             }, // main-menu
                             {
                                 block: 'contacts',
-                                mix: { block: 'header', elem: 'contacts' },
+                                mix: {block: 'header', elem: 'contacts'},
                                 content: [
                                     {
                                         elem: 'element',
-                                        mix: { block: 'link' },
+                                        mix: {block: 'link'},
                                         tag: 'a',
                                         attrs: {
                                             title: 'Оставить заявку',
@@ -171,7 +161,7 @@ module.exports = {
                                         content: [
                                             {
                                                 block: 'icon',
-                                                mix: { block: 'contacts', elem: 'icon' },
+                                                mix: {block: 'contacts', elem: 'icon'},
                                                 mods: {
                                                     type: 'cloud'
                                                 }
@@ -185,7 +175,7 @@ module.exports = {
                                     }, // element
                                     {
                                         elem: 'element',
-                                        mix: { block: 'link' },
+                                        mix: {block: 'link'},
                                         tag: 'a',
                                         attrs: {
                                             title: 'Заказать обратный звонок',
@@ -216,43 +206,163 @@ module.exports = {
         {
             block: 'content',
             content: {
-              block: 'row',
-              content: [
-                {
-                  elem: 'col',
-                  elemMods: {
-                      mw: 3,
-                      type: 'left'
-                  },
-                  content: 'left column'
-                },
-                  {
-                      elem: 'col',
-                      elemMods: {
-                          mw: 6,
-                          type: 'center'
-                      },
-                      content: [
-                          'center column'
-                      ]
-                  },
-                {
-                  elem: 'col',
-                  elemMods: {
-                      mw: 3,
-                      type: 'right'
-                  },
-                  content: 'right column'
-                }
-              ]
+                block: 'row',
+                content: [
+                    {
+                        elem: 'col',
+                        elemMods: {
+                            mw: 3,
+                            type: 'left'
+                        },
+                        content: 'left column'
+                    },
+                    {
+                        elem: 'col',
+                        elemMods: {
+                            mw: 6,
+                            type: 'center'
+                        },
+                        content: [
+                            'center column'
+                        ]
+                    },
+                    {
+                        elem: 'col',
+                        elemMods: {
+                            mw: 3,
+                            type: 'right'
+                        },
+                        content: 'right column'
+                    }
+                ]
             }
         },
         {
             block: 'footer',
             content: {
                 block: 'row',
+                mix: { block: 'footer', elem: 'content' },
                 content: [
-                    'footer content'
+                    {
+                        elem: 'col',
+                        mix: { block: 'footer', elem: 'col', elemMods: { side: 'left' } },
+                        elemMods: {
+                            mw: 5
+                        },
+                        content: [
+                            {
+                                block: 'footer-menu',
+                                tag: 'nav',
+                                content: [
+                                    {
+                                        elem: 'list',
+                                        tag: 'ul',
+                                        content: [
+                                            {
+                                                elem: 'item',
+                                                tag: 'li',
+                                                content: [
+                                                    {
+                                                        block: 'link',
+                                                        mix: { block: 'footer-menu',  elem: 'link' },
+                                                        url: '#',
+                                                        title: 'Главная',
+                                                        content: 'Главная'
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                elem: 'item',
+                                                tag: 'li',
+                                                content: [
+                                                    {
+                                                        block: 'link',
+                                                        mix: { block: 'footer-menu',  elem: 'link' },
+                                                        url: '#',
+                                                        title: 'О нас',
+                                                        content: 'О нас'
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                elem: 'item',
+                                                tag: 'li',
+                                                content: [
+                                                    {
+                                                        block: 'link',
+                                                        mix: { block: 'footer-menu',  elem: 'link' },
+                                                        url: '#',
+                                                        title: 'Блог',
+                                                        content: 'Блог'
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                elem: 'item',
+                                                tag: 'li',
+                                                content: [
+                                                    {
+                                                        block: 'link',
+                                                        mix: { block: 'footer-menu',  elem: 'link' },
+                                                        url: '#',
+                                                        title: 'Услуги и цены',
+                                                        content: 'Услуги и цены'
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                elem: 'item',
+                                                tag: 'li',
+                                                content: [
+                                                    {
+                                                        block: 'link',
+                                                        mix: { block: 'footer-menu',  elem: 'link' },
+                                                        url: '#',
+                                                        title: 'Отзывы',
+                                                        content: 'Отзывы'
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                elem: 'item',
+                                                tag: 'li',
+                                                content: [
+                                                    {
+                                                        block: 'link',
+                                                        mix: { block: 'footer-menu',  elem: 'link' },
+                                                        url: '#',
+                                                        title: 'Контакты',
+                                                        content: 'Контакты'
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                elem: 'item',
+                                                tag: 'li',
+                                                content: [
+                                                    {
+                                                        block: 'link',
+                                                        mix: { block: 'footer-menu',  elem: 'link' },
+                                                        url: '#',
+                                                        title: 'Портфолио',
+                                                        content: 'Портфолио'
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        elem: 'col',
+                        mix: { block: 'footer', elem: 'col', elemMods: { side: 'right' } },
+                        elemMods: {
+                            mw: 5
+                        },
+                        content: 'Pinguin-Studio.com.ua - Создание сайтов в Днепропетровске. Разработка интернет-магазинов<br>Pinguin Studio. Cоздание сайтов в Днепропетровске, разработка интернет-магазинов в Днепропетровске. Разработка сайтов, раскрутка, продвижение.<br>© Pinguin Studio, 2016'
+                    }
                 ]
             }
         }
