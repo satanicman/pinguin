@@ -1,0 +1,3 @@
+block('icon').mod('social')(
+    mix()({ block: 'social', elem: 'icon' })
+);

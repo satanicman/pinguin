@@ -1,0 +1,4 @@
+block('social').elem('item')(
+    tag()('li'),
+    js()(true)
+);
