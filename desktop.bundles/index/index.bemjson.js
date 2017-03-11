@@ -24,7 +24,7 @@ module.exports = {
                             elemMods: {
                                 m: true
                             },
-                            mix: { block: 'header', elem: 'col', elemMods: { side: 'left' }},
+                            mix: {block: 'header', elem: 'col', elemMods: {side: 'left'}},
                             content: [
                                 {
                                     block: 'link',
@@ -44,7 +44,7 @@ module.exports = {
                         },
                         {
                             elem: 'col',
-                            mix: { block: 'header', elem: 'col', elemMods: { side: 'right' }},
+                            mix: {block: 'header', elem: 'col', elemMods: {side: 'right'}},
                             elemMods: {
                                 mw: 8
                             },
@@ -205,11 +205,12 @@ module.exports = {
                     content: [
                         {
                             block: 'row',
+                            mix: {block: 'content', elem: 'line'},
                             content: [
                                 {
                                     elem: 'col',
                                     elemMods: {
-                                    mw: 12
+                                        mw: 12
                                     },
                                     content: [
                                         {
@@ -269,69 +270,194 @@ module.exports = {
                 }, // slider
                 {
                     block: 'numbers',
-                    content: {
-                        block: 'row',
-                        content: {
-                            elem: 'col',
-                            elemMods: {
-                                mw: 12
-                            },
-                            content: [
-                                {
-                                    block: "title",
-                                    tag: 'h3',
-                                    content: "Цифры и Факты"
+                    content: [
+                        {
+                            block: 'row',
+                            mix: {block: 'content', elem: 'line', elemMods: {color: 'white'}},
+                            content: {
+                                elem: 'col',
+                                elemMods: {
+                                    mw: 12
                                 },
-                                {
-                                    block: "title",
-                                    mods: {
-                                        under: true
+                                content: [
+                                    {
+                                        block: "title",
+                                        tag: 'h3',
+                                        content: "Цифры и Факты"
                                     },
-                                    tag: 'h3',
-                                    content: "Цифры и Факты"
-                                },
-                                {
-                                    block: 'lamp',
-                                    content: [
-                                        {
-                                            elem: 'image'
+                                    {
+                                        block: "title",
+                                        mods: {
+                                            under: true
                                         },
-                                        {
-                                            elem: 'light'
-                                        }
-                                    ]
-                                },
-                                {
-                                    block: 'numbers-list',
-                                    mix: [
-                                        { block: 'numbers', elem: 'list' },
-                                        { block: 'row' }
-                                    ],
-                                    content: [
-                                        { title: '<span class="number__num">7</span><br/>лет на рынке', text: '- Работаем по договору;<br/>- Наличный/безналичный расчет;<br/>- Уникальный дизайн;<br/>- Личный менеджер проекта для каждого клиента;<br/>- В любом проекте работаем по техническому заданию, при необходимости составляем его самостоятельно.' },
-                                        { title: '<span class="number__num">134</span><br/>выполненых проекта', text: '- Программируем на современных системах управления контентом и фреймворках.<br/>- Сайты разрабатываем как с нуля “под ключ”, так и модернизируем уже существующие.' },
-                                        { title: 'В топ <span class="number__num">10</span><br/>лучших веб-студий Днипра', text: '- Используем ряд своих собственных разработок, предлагаем различные решения;<br/>- Обеспечиваем полный цикл работ, от разработки дизайна <br/>до рекламы, продвижения и аудита' }
-                                    ].map(function(item) {
-                                        return {
-                                            block: 'number',
-                                            mix: { block: 'row', elem: 'col', elemMods: { mw: 4 } },
-                                            content: [
-                                                {
-                                                    elem: 'title',
-                                                    content: item.title
-                                                },
-                                                {
-                                                    elem: 'text',
-                                                    content: item.text
-                                                }
-                                            ]
-                                        }
-                                    })
-                                }
-                            ]
+                                        tag: 'h3',
+                                        content: "Цифры и Факты"
+                                    },
+                                    {
+                                        block: 'lamp',
+                                        content: [
+                                            {
+                                                elem: 'image'
+                                            },
+                                            {
+                                                elem: 'light'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        block: 'numbers-list',
+                                        mix: [
+                                            {block: 'numbers', elem: 'list'},
+                                            {block: 'row'}
+                                        ],
+                                        content: [
+                                            {
+                                                title: '<span class="number__num">7</span><br/>лет на рынке',
+                                                text: '- Работаем по договору;<br/>- Наличный/безналичный расчет;<br/>- Уникальный дизайн;<br/>- Личный менеджер проекта для каждого клиента;<br/>- В любом проекте работаем по техническому заданию, при необходимости составляем его самостоятельно.'
+                                            },
+                                            {
+                                                title: '<span class="number__num">134</span><br/>выполненых проекта',
+                                                text: '- Программируем на современных системах управления контентом и фреймворках.<br/>- Сайты разрабатываем как с нуля “под ключ”, так и модернизируем уже существующие.'
+                                            },
+                                            {
+                                                title: 'В топ <span class="number__num">10</span><br/>лучших веб-студий Днипра',
+                                                text: '- Используем ряд своих собственных разработок, предлагаем различные решения;<br/>- Обеспечиваем полный цикл работ, от разработки дизайна <br/>до рекламы, продвижения и аудита'
+                                            }
+                                        ].map(function (item) {
+                                            return {
+                                                block: 'number',
+                                                mix: {block: 'row', elem: 'col', elemMods: {mw: 4}},
+                                                content: [
+                                                    {
+                                                        elem: 'title',
+                                                        content: item.title
+                                                    },
+                                                    {
+                                                        elem: 'text',
+                                                        content: item.text
+                                                    }
+                                                ]
+                                            }
+                                        })
+                                    }
+                                ]
+                            }
                         }
-                    }
-                } // numbers
+                    ]
+                }, // numbers
+                {
+                    block: 'capabilities',
+                    content: [
+                        {
+                            block: 'row',
+                            mix: {block: 'content', elem: 'line'},
+                            content: {
+                                elem: 'col',
+                                elemMods: {
+                                    mw: 12
+                                },
+                                content: [
+                                    {
+                                        block: 'image',
+                                        mix: {block: 'content', elem: 'image', elemMods: {block: 'capabilities'}},
+                                        url: "../../img/capabilities.png"
+                                    },
+                                    {
+                                        block: 'title',
+                                        tag: 'h3',
+                                        content: "Возможности"
+                                    },
+                                    {
+                                        block: 'title',
+                                        mods: {
+                                            under: true
+                                        },
+                                        tag: 'h3',
+                                        content: "Профессионально разрабатываем под ключ:"
+                                    },
+                                    {
+                                        block: 'capabilities-list',
+                                        mix: [
+                                            {block: 'row'},
+                                            {block: 'capabilities', elem: 'list'}
+                                        ],
+                                        content: [
+                                            {title: "Интернет-магазины", image: "../../common.blocks/opportunity/1.png", description: "Лучшее решение для продажи широкого ассортимента товаров. Именно интернет-магазины превращают разовых покупателей в постоянных, а намерение найти какую-то мелочь - в полную корзину покупок"},
+                                            {title: "Корпоративные сайты", image: "../../common.blocks/opportunity/2.png", description: "Корпоративный сайт - лицо Вашего бизнеса. Работает как продающий, когда для принятия решения клиенту нужно понять с какой компанией он имеет дело."},
+                                            {title: "Информационные сайты", image: "../../common.blocks/opportunity/3.png", description: "Информационный сайт содержит самые  общие данные о владельце сайта (организации или индивидуального предпринимателя): вид деятельности, историю, прайс-лист, контактные данные, реквизиты, схему проездаи так далее."},
+                                            {title: "Индивидуальные проекты", image: "../../common.blocks/opportunity/4.png", description: "Под индвидуальной разработкой понимается проект, который отличается от стандратных сайтов, это может быть портал или система управления предприятием, а возможно Вы просто хотите написанную индивидуально под Вас систему управления сайтом."}
+                                        ].map(function (item) {
+                                            return {
+                                                block: 'opportunity',
+                                                tag: 'li',
+                                                mix: [
+                                                    {block: 'capabilities-list', elem: 'item'},
+                                                    {block: 'row', elem: 'col', elemMods: {m: true}}
+                                                ],
+                                                content: [
+                                                    {
+                                                        elem: 'title',
+                                                        content: item.title
+                                                    },
+                                                    {
+                                                        elem: 'image',
+                                                        content: {
+                                                            block: 'image',
+                                                            mods: {responsive: true},
+                                                            url: item.image,
+                                                            title: item.title
+                                                        }
+                                                    },
+                                                    {
+                                                        elem: 'description',
+                                                        content: item.description
+                                                    },
+                                                    {
+                                                        elem: 'button',
+                                                        content: {
+                                                            block: 'button',
+                                                            mix: {
+                                                                block: 'opportunity',
+                                                                elem: 'button'
+                                                            },
+                                                            mods: {
+                                                                type: 'link',
+                                                                size: 's',
+                                                                theme: 'pinguin',
+                                                                more: true
+                                                            },
+                                                            url: '#',
+                                                            content: [
+                                                                {
+                                                                    block: 'icon',
+                                                                    mods: {
+                                                                        type: 'dote'
+                                                                    }
+                                                                },
+                                                                {
+                                                                    block: 'icon',
+                                                                    mods: {
+                                                                        type: 'dote'
+                                                                    }
+                                                                },
+                                                                {
+                                                                    block: 'icon',
+                                                                    mods: {
+                                                                        type: 'dote'
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            };
+                                        })
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
             ] // content-content
         },
         {
