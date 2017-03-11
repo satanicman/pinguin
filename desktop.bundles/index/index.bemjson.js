@@ -10,7 +10,7 @@ module.exports = {
         {elem: 'css', url: 'index.min.css'}
     ],
     scripts: [{elem: 'js', url: 'index.min.js'}],
-    mods: {theme: 'base'},
+    mods: {theme: 'pinguin'},
     content: [
         {
             block: 'header',
@@ -22,8 +22,9 @@ module.exports = {
                         {
                             elem: 'col',
                             elemMods: {
-                                mw: 3
+                                m: true
                             },
+                            mix: { block: 'header', elem: 'col', elemMods: { side: 'left' }},
                             content: [
                                 {
                                     block: 'link',
@@ -43,8 +44,9 @@ module.exports = {
                         },
                         {
                             elem: 'col',
+                            mix: { block: 'header', elem: 'col', elemMods: { side: 'right' }},
                             elemMods: {
-                                mw: 9
+                                mw: 8
                             },
                             content: [
                                 {
@@ -199,48 +201,149 @@ module.exports = {
             block: 'content',
             content: [
                 {
-                    block: 'row',
+                    block: 'slider',
                     content: [
                         {
+                            block: 'row',
+                            content: [
+                                {
+                                    elem: 'col',
+                                    elemMods: {
+                                    mw: 12
+                                    },
+                                    content: [
+                                        {
+                                            block: 'slide',
+                                            content: [
+                                                {
+                                                    block: 'image',
+                                                    mods: {responsive: true},
+                                                    mix: {block: 'slide', elem: 'image'},
+                                                    alt: 'Slider 1',
+                                                    url: '../../common.blocks/slide/slide__1.png'
+                                                },
+                                                {
+                                                    block: 'slide-text',
+                                                    mix: {block: 'slide', elem: 'description'},
+                                                    content: [
+                                                        {
+                                                            block: 'title',
+                                                            tag: 'h1',
+                                                            mix: {
+                                                                block: 'slide',
+                                                                elem: 'title'
+                                                            },
+                                                            content: 'Создаем сайты с индивидуальным премиум-дизайном'
+                                                        },
+                                                        {
+                                                            block: 'text',
+                                                            mix: {
+                                                                block: 'slide',
+                                                                elem: 'text'
+                                                            },
+                                                            content: 'Эффективные и удобные, которые работают на любых устройствах'
+                                                        },
+                                                        {
+                                                            block: 'button',
+                                                            mix: {
+                                                                block: 'slide',
+                                                                elem: 'button'
+                                                            },
+                                                            mods: {
+                                                                type: 'link',
+                                                                size: 'xl',
+                                                                theme: 'pinguin'
+                                                            },
+                                                            url: '#',
+                                                            text: 'Узнать почему студия Пингвин вам подходит'
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ] //slider-content
+                }, // slider
+                {
+                    block: 'numbers',
+                    content: {
+                        block: 'row',
+                        content: {
                             elem: 'col',
                             elemMods: {
-                                mw: 3,
-                                type: 'left'
-                            },
-                            content: 'left column'
-                        },
-                        {
-                            elem: 'col',
-                            elemMods: {
-                                mw: 6,
-                                type: 'center'
+                                mw: 12
                             },
                             content: [
-                                'center column'
+                                {
+                                    block: "title",
+                                    tag: 'h3',
+                                    content: "Цифры и Факты"
+                                },
+                                {
+                                    block: "title",
+                                    mods: {
+                                        under: true
+                                    },
+                                    tag: 'h3',
+                                    content: "Цифры и Факты"
+                                },
+                                {
+                                    block: 'lamp',
+                                    content: [
+                                        {
+                                            elem: 'image'
+                                        },
+                                        {
+                                            elem: 'light'
+                                        }
+                                    ]
+                                },
+                                {
+                                    block: 'numbers-list',
+                                    mix: [
+                                        { block: 'numbers', elem: 'list' },
+                                        { block: 'row' }
+                                    ],
+                                    content: [
+                                        { title: '<span class="number__num">7</span><br/>лет на рынке', text: '- Работаем по договору;<br/>- Наличный/безналичный расчет;<br/>- Уникальный дизайн;<br/>- Личный менеджер проекта для каждого клиента;<br/>- В любом проекте работаем по техническому заданию, при необходимости составляем его самостоятельно.' },
+                                        { title: '<span class="number__num">134</span><br/>выполненых проекта', text: '- Программируем на современных системах управления контентом и фреймворках.<br/>- Сайты разрабатываем как с нуля “под ключ”, так и модернизируем уже существующие.' },
+                                        { title: 'В топ <span class="number__num">10</span><br/>лучших веб-студий Днипра', text: '- Используем ряд своих собственных разработок, предлагаем различные решения;<br/>- Обеспечиваем полный цикл работ, от разработки дизайна <br/>до рекламы, продвижения и аудита' }
+                                    ].map(function(item) {
+                                        return {
+                                            block: 'number',
+                                            mix: { block: 'row', elem: 'col', elemMods: { mw: 4 } },
+                                            content: [
+                                                {
+                                                    elem: 'title',
+                                                    content: item.title
+                                                },
+                                                {
+                                                    elem: 'text',
+                                                    content: item.text
+                                                }
+                                            ]
+                                        }
+                                    })
+                                }
                             ]
-                        },
-                        {
-                            elem: 'col',
-                            elemMods: {
-                                mw: 3,
-                                type: 'right'
-                            },
-                            content: 'right column'
                         }
-                    ]
-                }
-            ]
+                    }
+                } // numbers
+            ] // content-content
         },
         {
             block: 'footer',
             content: [
                 {
                     block: 'row',
-                    mix: { block: 'footer', elem: 'content' },
+                    mix: {block: 'footer', elem: 'content'},
                     content: [
                         {
                             elem: 'col',
-                            mix: { block: 'footer', elem: 'col', elemMods: { side: 'left' } },
+                            mix: {block: 'footer', elem: 'col', elemMods: {side: 'left'}},
                             elemMods: {
                                 mw: 5
                             },
@@ -250,14 +353,17 @@ module.exports = {
                                     content: [
                                         {
                                             elem: 'list',
-                                            mix: { block: 'clearfix' },
+                                            mix: {block: 'clearfix'},
                                             content: [
                                                 {
                                                     elem: 'item',
                                                     content: [
                                                         {
                                                             block: 'link',
-                                                            mix: { block: 'footer-menu',  elem: 'link' },
+                                                            mix: [
+                                                                {block: 'text'},
+                                                                {block: 'footer-menu', elem: 'link'}
+                                                            ],
                                                             url: '#',
                                                             title: 'Главная',
                                                             content: 'Главная'
@@ -269,7 +375,10 @@ module.exports = {
                                                     content: [
                                                         {
                                                             block: 'link',
-                                                            mix: { block: 'footer-menu',  elem: 'link' },
+                                                            mix: [
+                                                                {block: 'text'},
+                                                                {block: 'footer-menu', elem: 'link'}
+                                                            ],
                                                             url: '#',
                                                             title: 'О нас',
                                                             content: 'О нас'
@@ -281,7 +390,10 @@ module.exports = {
                                                     content: [
                                                         {
                                                             block: 'link',
-                                                            mix: { block: 'footer-menu',  elem: 'link' },
+                                                            mix: [
+                                                                {block: 'text'},
+                                                                {block: 'footer-menu', elem: 'link'}
+                                                            ],
                                                             url: '#',
                                                             title: 'Блог',
                                                             content: 'Блог'
@@ -293,7 +405,10 @@ module.exports = {
                                                     content: [
                                                         {
                                                             block: 'link',
-                                                            mix: { block: 'footer-menu',  elem: 'link' },
+                                                            mix: [
+                                                                {block: 'text'},
+                                                                {block: 'footer-menu', elem: 'link'}
+                                                            ],
                                                             url: '#',
                                                             title: 'Услуги и цены',
                                                             content: 'Услуги и цены'
@@ -305,7 +420,10 @@ module.exports = {
                                                     content: [
                                                         {
                                                             block: 'link',
-                                                            mix: { block: 'footer-menu',  elem: 'link' },
+                                                            mix: [
+                                                                {block: 'text'},
+                                                                {block: 'footer-menu', elem: 'link'}
+                                                            ],
                                                             url: '#',
                                                             title: 'Отзывы',
                                                             content: 'Отзывы'
@@ -317,7 +435,10 @@ module.exports = {
                                                     content: [
                                                         {
                                                             block: 'link',
-                                                            mix: { block: 'footer-menu',  elem: 'link' },
+                                                            mix: [
+                                                                {block: 'text'},
+                                                                {block: 'footer-menu', elem: 'link'}
+                                                            ],
                                                             url: '#',
                                                             title: 'Контакты',
                                                             content: 'Контакты'
@@ -329,7 +450,10 @@ module.exports = {
                                                     content: [
                                                         {
                                                             block: 'link',
-                                                            mix: { block: 'footer-menu',  elem: 'link' },
+                                                            mix: [
+                                                                {block: 'text'},
+                                                                {block: 'footer-menu', elem: 'link'}
+                                                            ],
                                                             url: '#',
                                                             title: 'Портфолио',
                                                             content: 'Портфолио'
@@ -342,7 +466,7 @@ module.exports = {
                                 }, // footer-menu
                                 {
                                     block: 'social',
-                                    mix: { block: 'footer', elem: 'social' },
+                                    mix: {block: 'footer', elem: 'social'},
                                     content: [
                                         {
                                             elem: 'item',
@@ -464,14 +588,14 @@ module.exports = {
                         },
                         {
                             elem: 'col',
-                            mix: { block: 'footer', elem: 'col', elemMods: { side: 'right' } },
+                            mix: {block: 'footer', elem: 'col', elemMods: {side: 'right'}},
                             elemMods: {
                                 mw: 5
                             },
                             content: [
                                 {
                                     block: 'text',
-                                    mix: { block: 'footer', elem: 'text' },
+                                    mix: {block: 'footer', elem: 'text'},
                                     content: 'Pinguin-Studio.com.ua - Создание сайтов в Днепропетровске. Разработка интернет-магазинов<br>Pinguin Studio. Cоздание сайтов в Днепропетровске, разработка интернет-магазинов в Днепропетровске. Разработка сайтов, раскрутка, продвижение.<br>© Pinguin Studio, 2016'
                                 }
                             ]

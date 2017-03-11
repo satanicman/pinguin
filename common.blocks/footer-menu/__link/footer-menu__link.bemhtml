@@ -1,3 +1,0 @@
-block('footer-menu').block('link')(
-    mix()({ block: 'text' })
-);
