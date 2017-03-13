@@ -1,3 +1,0 @@
-block('number').elem('text')(
-    tag()('p')
-);

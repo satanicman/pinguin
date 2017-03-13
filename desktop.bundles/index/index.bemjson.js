@@ -325,18 +325,21 @@ module.exports = {
                                             }
                                         ].map(function (item) {
                                             return {
-                                                block: 'number',
+                                                elem: 'item',
                                                 mix: {block: 'row', elem: 'col', elemMods: {mw: 4}},
-                                                content: [
-                                                    {
-                                                        elem: 'title',
-                                                        content: item.title
-                                                    },
-                                                    {
-                                                        elem: 'text',
-                                                        content: item.text
-                                                    }
-                                                ]
+                                                content: {
+                                                    block: 'number',
+                                                    content: [
+                                                        {
+                                                            elem: 'title',
+                                                            content: item.title
+                                                        },
+                                                        {
+                                                            elem: 'description',
+                                                            content: item.text
+                                                        }
+                                                    ]
+                                                }
                                             }
                                         })
                                     }
@@ -388,68 +391,69 @@ module.exports = {
                                             {title: "Индивидуальные проекты", image: "../../common.blocks/opportunity/4.png", description: "Под индвидуальной разработкой понимается проект, который отличается от стандратных сайтов, это может быть портал или система управления предприятием, а возможно Вы просто хотите написанную индивидуально под Вас систему управления сайтом."}
                                         ].map(function (item) {
                                             return {
-                                                block: 'opportunity',
-                                                tag: 'li',
+                                                elem: 'item',
                                                 mix: [
-                                                    {block: 'capabilities-list', elem: 'item'},
                                                     {block: 'row', elem: 'col', elemMods: {m: true}}
                                                 ],
-                                                content: [
-                                                    {
-                                                        elem: 'title',
-                                                        content: item.title
-                                                    },
-                                                    {
-                                                        elem: 'image',
-                                                        content: {
-                                                            block: 'image',
-                                                            mods: {responsive: true},
-                                                            url: item.image,
-                                                            title: item.title
-                                                        }
-                                                    },
-                                                    {
-                                                        elem: 'description',
-                                                        content: item.description
-                                                    },
-                                                    {
-                                                        elem: 'button',
-                                                        content: {
-                                                            block: 'button',
-                                                            mix: {
-                                                                block: 'opportunity',
-                                                                elem: 'button'
-                                                            },
-                                                            mods: {
-                                                                type: 'link',
-                                                                size: 's',
-                                                                theme: 'pinguin',
-                                                                more: true
-                                                            },
-                                                            url: '#',
-                                                            content: [
-                                                                {
-                                                                    block: 'icon',
-                                                                    mods: {
-                                                                        type: 'dote'
-                                                                    }
+                                                content: {
+                                                    block: 'opportunity',
+                                                    content: [
+                                                        {
+                                                            elem: 'title',
+                                                            content: item.title
+                                                        },
+                                                        {
+                                                            elem: 'image',
+                                                            content: {
+                                                                block: 'image',
+                                                                mods: {responsive: true},
+                                                                url: item.image,
+                                                                title: item.title
+                                                            }
+                                                        },
+                                                        {
+                                                            elem: 'description',
+                                                            content: item.description
+                                                        },
+                                                        {
+                                                            elem: 'button',
+                                                            content: {
+                                                                block: 'button',
+                                                                mix: {
+                                                                    block: 'opportunity',
+                                                                    elem: 'button'
                                                                 },
-                                                                {
-                                                                    block: 'icon',
-                                                                    mods: {
-                                                                        type: 'dote'
-                                                                    }
+                                                                mods: {
+                                                                    type: 'link',
+                                                                    size: 's',
+                                                                    theme: 'pinguin',
+                                                                    more: true
                                                                 },
-                                                                {
-                                                                    block: 'icon',
-                                                                    mods: {
-                                                                        type: 'dote'
+                                                                url: '#',
+                                                                content: [
+                                                                    {
+                                                                        block: 'icon',
+                                                                        mods: {
+                                                                            type: 'dote'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        block: 'icon',
+                                                                        mods: {
+                                                                            type: 'dote'
+                                                                        }
+                                                                    },
+                                                                    {
+                                                                        block: 'icon',
+                                                                        mods: {
+                                                                            type: 'dote'
+                                                                        }
                                                                     }
-                                                                }
-                                                            ]
+                                                                ]
+                                                            }
                                                         }
-                                                    }
-                                                ]
+                                                    ]
+                                                }
                                             };
                                         })
                                     }
@@ -457,7 +461,87 @@ module.exports = {
                             }
                         }
                     ]
-                }
+                }, // capabilities
+                {
+                    block: 'works',
+                    content: [
+                        {
+                            block: 'row',
+                            mix: {block: 'content', elem: 'line', elemMods: {color: 'white'}},
+                            content: {
+                                elem: 'col',
+                                elemMods: {
+                                    mw: 12
+                                },
+                                content: [
+                                    {
+                                        block: 'image',
+                                        mix: {block: 'content', elem: 'image', elemMods: {block: 'works'}},
+                                        url: "../../img/works.png"
+                                    },
+                                    {
+                                        block: 'title',
+                                        tag: 'h3',
+                                        content: 'Как мы работаем'
+                                    },
+                                    {
+                                        block: 'title',
+                                        tag: 'h3',
+                                        mods: {
+                                            under: true
+                                        },
+                                        content: 'Процесс разработки и сопровождения  сайта:'
+                                    },
+                                    {
+                                        block: 'works-list',
+                                        mix: [
+                                            {block: 'works', elem: 'list'}
+                                        ],
+                                        content: [
+                                            {title: '/Знакомимся', description: '- Изучаем и анализируем требования к проекту; - Оцениваем стоимость и сроки проекта; - Формируем договор и техническое задание.', icon: 'meet'},
+                                            {title: '/Переходим к действиям', description: '- Разрабатываем прототип; - Последовательно прорисовываем макеты дизайна на основе утвержденных прототипов.', icon: 'actions'},
+                                            {title: '/Программируем', description: '- Верстаем утвержденные макеты; - Программируем требуемый функционал сайта; - Производим проверку работоспособности, согласно технического задания.', icon: 'programming'},
+                                            {title: '/Продвигаем и поддерживаем', description: '- Обучаем работе с административной частью; - Отправляем сайт на индексацию, устанавливаем счетчики посещаемости; - Разрабатываем рекламную кампанию; - Продвигаем сайт в поисковых системах.', icon: 'support'}
+                                        ].map(function(item, ids) {
+                                            var id = ids + 1;
+                                            return {
+                                                elem: 'item',
+                                                mix: [
+                                                    {block: 'row', elem: 'col', elemMods: {mw: 4}}
+                                                ],
+                                                content: {
+                                                    block: 'work',
+                                                    mods: {
+                                                        step: id
+                                                    },
+                                                    content: [
+                                                        {
+                                                            elem: 'title',
+                                                            content: item.title
+                                                        },
+                                                        {
+                                                            elem: 'description',
+                                                            content: item.description
+                                                        },
+                                                        {
+                                                            elem: 'icon',
+                                                            content: {
+                                                                block: 'icon',
+                                                                mods: {
+                                                                    type: item.icon
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            };
+                                        })
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                } // works
             ] // content-content
         },
         {
