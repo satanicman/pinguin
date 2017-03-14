@@ -427,7 +427,7 @@ module.exports = {
                                                                     type: 'link',
                                                                     size: 's',
                                                                     theme: 'pinguin',
-                                                                    more: true
+                                                                    round: true
                                                                 },
                                                                 url: '#',
                                                                 content: [
@@ -541,7 +541,146 @@ module.exports = {
                             }
                         }
                     ]
-                } // works
+                }, // works
+                {
+                    block: 'portfolio',
+                    content: [
+
+                        {
+                            block: 'row',
+                            content: {
+                                elem: 'col',
+                                elemMods: {
+                                    mw:12
+                                },
+                                content: [
+                                    {
+                                        block: 'title',
+                                        content: 'Портфолио'
+                                    },
+                                    {
+                                        block: 'title',
+                                        mods: {
+                                            under: true
+                                        },
+                                        content: 'Работы, которыми гордимся:'
+                                    },
+                                    {
+                                        block: 'portfolio-slide',
+                                        mix: {block: 'portfolio', elem: 'slider'},
+                                        content: [
+                                            {
+                                                elem: 'nav',
+                                                elemMods: {
+                                                    side: 'left'
+                                                },
+                                                content: {
+                                                    block: 'button',
+                                                    mix: {
+                                                        block: 'portfolio',
+                                                        elem: 'button',
+                                                        side: 'left'
+                                                    },
+                                                    mods: {
+                                                        type: 'button',
+                                                        size: 'm',
+                                                        theme: 'pinguin',
+                                                        round: true
+                                                    },
+                                                    url: '#',
+                                                    content: [
+                                                        {
+                                                            block: 'icon',
+                                                            mods: {
+                                                                type: 'portfolio-prev'
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                block: 'image',
+                                                mods: {responsive: true},
+                                                alt: 'Portfolio slide 1',
+                                                url: '../../common.blocks/portfolio-slide/portfolio-slide.png'
+                                            },
+                                            {
+                                                elem: 'text',
+                                                content: "Смотреть все"
+                                            },
+                                            {
+                                                elem: 'button',
+                                                content: {
+                                                    block: 'button',
+                                                    mix: {
+                                                        block: 'opportunity',
+                                                        elem: 'button'
+                                                    },
+                                                    mods: {
+                                                        type: 'link',
+                                                        size: 's',
+                                                        theme: 'pinguin',
+                                                        round: true
+                                                    },
+                                                    url: '#',
+                                                    content: [
+                                                        {
+                                                            block: 'icon',
+                                                            mods: {
+                                                                type: 'dote'
+                                                            }
+                                                        },
+                                                        {
+                                                            block: 'icon',
+                                                            mods: {
+                                                                type: 'dote'
+                                                            }
+                                                        },
+                                                        {
+                                                            block: 'icon',
+                                                            mods: {
+                                                                type: 'dote'
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                elem: 'nav',
+                                                elemMods: {
+                                                    side: 'right'
+                                                },
+                                                content: {
+                                                    block: 'button',
+                                                    mix: {
+                                                        block: 'portfolio',
+                                                        elem: 'button',
+                                                        side: 'left'
+                                                    },
+                                                    mods: {
+                                                        type: 'button',
+                                                        size: 'm',
+                                                        theme: 'pinguin',
+                                                        round: true
+                                                    },
+                                                    url: '#',
+                                                    content: [
+                                                        {
+                                                            block: 'icon',
+                                                            mods: {
+                                                                type: 'portfolio-next'
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                } // portfolio
             ] // content-content
         },
         {
