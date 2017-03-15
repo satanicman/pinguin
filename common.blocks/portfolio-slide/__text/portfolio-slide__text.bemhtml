@@ -1,3 +1,0 @@
-block('portfolio-slide').elem('text')(
-    tag()('p')
-);
