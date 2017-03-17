@@ -1,0 +1,3 @@
+block('team-list').elem('item')(
+    tag()('li')
+);

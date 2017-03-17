@@ -1,0 +1,4 @@
+block('member.styl')(
+    elem('name').tag()('p'),
+    elem('position').tag()('p')
+);
