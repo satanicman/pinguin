@@ -431,19 +431,22 @@ module.exports = {
                                                                 {
                                                                     block: 'icon',
                                                                     mods: {
-                                                                        type: 'dote'
+                                                                        type: 'dote',
+                                                                        size: 's'
                                                                     }
                                                                 },
                                                                 {
                                                                     block: 'icon',
                                                                     mods: {
-                                                                        type: 'dote'
+                                                                        type: 'dote',
+                                                                        size: 's'
                                                                     }
                                                                 },
                                                                 {
                                                                     block: 'icon',
                                                                     mods: {
-                                                                        type: 'dote'
+                                                                        type: 'dote',
+                                                                        size: 's'
                                                                     }
                                                                 }
                                                             ]
@@ -661,19 +664,22 @@ module.exports = {
                                                         {
                                                             block: 'icon',
                                                             mods: {
-                                                                type: 'dote'
+                                                                type: 'dote',
+                                                                size: 's'
                                                             }
                                                         },
                                                         {
                                                             block: 'icon',
                                                             mods: {
-                                                                type: 'dote'
+                                                                type: 'dote',
+                                                                size: 's'
                                                             }
                                                         },
                                                         {
                                                             block: 'icon',
                                                             mods: {
-                                                                type: 'dote'
+                                                                type: 'dote',
+                                                                size: 's'
                                                             }
                                                         }
                                                     ]
@@ -684,6 +690,429 @@ module.exports = {
                                 }
                             ]
                         } // portfolio
+                    }
+                },
+                {
+                    elem: 'line',
+                    elemMods: {
+                        color: 'white',
+                        theme: 'reviews'
+                    },
+                    content: {
+                        block: 'row',
+                        mix: {block: 'content', elem: 'line-in'},
+                        content: {
+                            block: 'reviews',
+                            mix: { block: 'row', elem: 'col', elemMods: { mw: 12 }},
+                            content: [
+                                {
+                                    block: 'image',
+                                    mix: {block: 'content', elem: 'image', elemMods: {block: 'reviews'}},
+                                    url: "../../img/reviews.png"
+                                },
+                                {
+                                    block: 'title',
+                                    tag: 'h3',
+                                    content: 'Клиенты и отзывы'
+                                },
+                                {
+                                    block: 'title',
+                                    mods: {
+                                        under: true
+                                    },
+                                    tag: 'h6',
+                                    content: 'Коротко о позитивном опыте работы с нами:'
+                                },
+                                {
+                                    block: 'reviews-slider',
+                                    mix: {
+                                        block: 'reviews',
+                                        elem: 'slider'
+                                    },
+                                    content: [
+                                        {
+                                            elem: 'slide',
+                                            mix: { block: 'row' },
+                                            content: [
+                                                {
+                                                    block: 'review',
+                                                    mix: {
+                                                        block: 'row',
+                                                        elem: 'col',
+                                                        elemMods: {mw: 5}
+                                                    },
+                                                    content: [
+                                                        {
+                                                            elem: 'avatar',
+                                                            content:{
+                                                                block: 'image',
+                                                                mix: {block: 'review', elem: 'avatar'},
+                                                                alt: 'Евгения Коптеева',
+                                                                url: '../../common.blocks/review/__avatar/review__avatar.png'
+                                                            }
+                                                        },
+                                                        {
+                                                            elem: 'name',
+                                                            content: 'Евгения Коптеева'
+                                                        },
+                                                        {
+                                                            elem: 'position',
+                                                            content: 'Руководитель Салона проката игрушек и детских товаров "ПРОКАТИК"'
+                                                        },
+                                                        {
+                                                            elem: 'description',
+                                                            content: 'Благодарю весь коллектив студии за слаженную и профессиональную работу. Много раз обращалась и всегда все вопросы поддержки сайта решались результативно, и в кратчайшие сроки.'
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    elem: 'image',
+                                                    mix: {
+                                                        block: 'row',
+                                                        elem: 'col',
+                                                        elemMods: {mw: 7}
+                                                    },
+                                                    content: {
+                                                        block: 'image',
+                                                        mods: {
+                                                            responsive: true
+                                                        },
+                                                        alt: 'review',
+                                                        url: '../../common.blocks/reviews-slider/__image/reviews-slider__image.png'
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            elem: 'nav',
+                                            elemMods: {side: 'left'},
+                                            content: {
+                                                block: 'icon',
+                                                mods: {
+                                                    type: 'reviews-prev'
+                                                }
+                                            }
+                                        },
+                                        {
+                                            elem: 'nav',
+                                            elemMods: {side: 'right'},
+                                            content: {
+                                                block: 'icon',
+                                                mods: {
+                                                    type: 'reviews-next'
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                {
+                                    block: 'clients',
+                                    content: [
+                                        {
+                                            elem: 'title',
+                                            content: 'Уже сработались'
+                                        },
+                                        {
+                                            elem: 'slider',
+                                            content: [
+                                                {
+                                                    elem: 'slide',
+                                                    mix: {block: 'row'},
+                                                    content: [
+                                                        {active: true, url: '../../common.blocks/clients/__client/clients__client_1.png'},
+                                                        {active: false, url: '../../common.blocks/clients/__client/clients__client_2.png'},
+                                                        {active: false, url: '../../common.blocks/clients/__client/clients__client_3.png'},
+                                                        {active: false, url: '../../common.blocks/clients/__client/clients__client_4.png'},
+                                                        {active: false, url: '../../common.blocks/clients/__client/clients__client_5.png'},
+                                                        {active: false, url: '../../common.blocks/clients/__client/clients__client_6.png'},
+                                                        {active: false, url: '../../common.blocks/clients/__client/clients__client_7.png'},
+                                                        {active: false, url: '../../common.blocks/clients/__client/clients__client_8.png'},
+                                                        {active: false, url: '../../common.blocks/clients/__client/clients__client_9.png'},
+                                                        {active: false, url: '../../common.blocks/clients/__client/clients__client_10.png'}
+                                                    ].map(function(item, id) {
+                                                        var ids = id + 1;
+                                                        return {
+                                                            elem: 'client',
+                                                            mix: {block: 'row', elem: 'col', elemMods: {m: true}},
+                                                            elemMods: {
+                                                                hovered: true
+                                                            },
+                                                            content: {
+                                                                block: 'image',
+                                                                mix: {block: 'clients', elem: 'image'},
+                                                                mods: {
+                                                                    responsive: true
+                                                                },
+                                                                title: 'Slide ' + ids,
+                                                                url: item.url
+                                                            }
+                                                        }
+                                                    }),
+                                                },
+                                                {
+                                                    elem: 'dotes',
+                                                    content: [
+                                                        {
+                                                            block: 'icon',
+                                                            mods: {
+                                                                type: 'dote',
+                                                                size: 'm'
+                                                            },
+                                                            cls: 'active'
+                                                        },
+                                                        {
+                                                            block: 'icon',
+                                                            mods: {
+                                                                type: 'dote',
+                                                                size: 'm'
+                                                            },
+                                                        },
+                                                        {
+                                                            block: 'icon',
+                                                            mods: {
+                                                                type: 'dote',
+                                                                size: 'm'
+                                                            },
+                                                        },
+                                                        {
+                                                            block: 'icon',
+                                                            mods: {
+                                                                type: 'dote',
+                                                                size: 'm'
+                                                            },
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        } // reviews
+                    }
+                },
+                {
+                    elem: 'line',
+                    elemMods: {
+                        theme: 'team'
+                    },
+                    content: {
+                        block: 'row',
+                        mix: {block: 'content', elem: 'line-in'},
+                        content: {
+                            block: 'team',
+                            mix: { block: 'row', elem: 'col', elemMods: { mw: 12 }},
+                            content: [
+                                {
+                                    block: 'title',
+                                    tag: 'h3',
+                                    content: 'Наша Команда:'
+                                },
+                                {
+                                    block: 'title',
+                                    mods: {
+                                        under: true
+                                    },
+                                    tag: 'h6',
+                                    content: 'В среднем в разработке Вашего проекта<br>будет задействовано от трех профильных специалистов'
+                                },
+                                {
+                                    block: 'team-list',
+                                    mix: [
+                                        {block: 'team', elem: 'list'},
+                                        {block: 'row'}
+                                    ],
+                                    content: [
+                                        {name: 'Александр Ткаченко', position: 'Директор'},
+                                        {name: 'Барна Богдан', position: 'Менеджер проектов'},
+                                        {name: 'Павел Тополь', position: 'Программист'},
+                                        {name: 'Вася Пупкин', position: 'ПРограммист'},
+                                        {name: 'АНдрей Бялонович', position: 'ПРограммист'},
+                                        {name: 'Светлана Синега', position: 'КОПИРАЙТер'},
+                                        {name: 'Давид сывый', position: 'Веб-дизайнер'},
+                                        {name: 'Николай Скоропадский', position: 'Сео-специалист'}
+                                    ].map(function(item, id) {
+                                        var ids = id + 1;
+                                        return {
+                                            elem: 'item',
+                                            mix: {block: 'row', elem: 'col', elemMods: {mw: 3}},
+                                            content: {
+                                                block: 'member',
+                                                content: [
+                                                    {
+                                                        elem: 'avatar',
+                                                        content: {
+                                                            block: 'image',
+                                                            mix: {block: 'member', elem: 'image'},
+                                                            mods: {
+                                                                responsive: true
+                                                            },
+                                                            title: item.name,
+                                                            url: '../../common.blocks/member/__image/' + ids + '.png'
+                                                        }
+                                                    },
+                                                    {
+                                                        elem: 'name',
+                                                        content: item.name
+                                                    },
+                                                    {
+                                                        elem: 'position',
+                                                        content: item.position
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    })
+                                }
+                            ]
+                        } // team
+                    }
+                },
+                {
+                    elem: 'line',
+                    elemMods: {
+                        color: 'white',
+                        theme: 'feedback'
+                    },
+                    content: {
+                        block: 'row',
+                        mix: {block: 'content', elem: 'line-in'},
+                        content: {
+                            block: 'feedback',
+                            mix: { block: 'row', elem: 'col', elemMods: { mw: 12 }},
+                            content: [
+                                {
+                                    block: 'title',
+                                    tag: 'h3',
+                                    content: 'Переходим к действиям'
+                                },
+                                {
+                                    block: 'title',
+                                    mods: {
+                                        under: true
+                                    },
+                                    tag: 'h6',
+                                    content: 'Если мы успели заинтересовать вас,<br>давайте начинать работать.<br>Связаться с нами можно любым удобным<br>способом:'
+                                },
+                                {
+                                    block: 'feedback-list',
+                                    mix: [
+                                        {block: 'feedback', elem: 'list'},
+                                        {block: 'row'}
+                                    ],
+                                    content: [
+                                        {
+                                            elem: 'item',
+                                            mix: {block: 'row', elem: 'col', elemMods: {mw: 4}},
+                                            content: [
+                                                {
+                                                    elem: 'image',
+                                                    content: {
+                                                        block: 'image',
+                                                        mods: {
+                                                            responsive: true
+                                                        },
+                                                        title: 'phone',
+                                                        url: '../../common.blocks/feedback-list/__image/feedback-list__image_phone.png'
+                                                    }
+                                                },
+                                                {
+                                                    elem: 'information',
+                                                    content: [
+                                                        {
+                                                            elem: 'title',
+                                                            content: 'Позвонить нам'
+                                                        },
+                                                        {
+                                                            elem: 'phones',
+                                                            content: '(056) 786-17-17<br>(096) 480-66-06<br>(099) 652-13-48'
+                                                        },
+                                                        {
+                                                            elem: 'title',
+                                                            content: [
+                                                                {
+                                                                    elem: 'first-word',
+                                                                    content: 'Skype:'
+                                                                },
+                                                                '&nbsp;akvadon'
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            elem: 'item',
+                                            mix: {block: 'row', elem: 'col', elemMods: {mw: 4}},
+                                            content: [
+                                                {
+                                                    elem: 'image',
+                                                    content: {
+                                                        block: 'image',
+                                                        mods: {
+                                                            responsive: true
+                                                        },
+                                                        title: 'feather',
+                                                        url: '../../common.blocks/feedback-list/__image/feedback-list__image_feather.png'
+                                                    }
+                                                },
+                                                {
+                                                    elem: 'information',
+                                                    elemMods: {center: true},
+                                                    content: {
+                                                        elem: 'button',
+                                                        content: {
+                                                            block: 'button',
+                                                            mods: {
+                                                                size: 'm',
+                                                                type: 'link',
+                                                                theme: 'pinguin'
+                                                            },
+                                                            type: 'link',
+                                                            text: 'оформить заявку'
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            elem: 'item',
+                                            mix: {block: 'row', elem: 'col', elemMods: {mw: 4}},
+                                            content: [
+                                                {
+                                                    elem: 'image',
+                                                    content: {
+                                                        block: 'image',
+                                                        mods: {
+                                                            responsive: true
+                                                        },
+                                                        title: 'nodepad',
+                                                        url: '../../common.blocks/feedback-list/__image/feedback-list__image_nodepad.png'
+                                                    }
+                                                },
+                                                {
+                                                    elem: 'information',
+                                                    elemMods: {center: true},
+                                                    content: {
+                                                        elem: 'button',
+                                                        content: {
+                                                            block: 'button',
+                                                            mods: {
+                                                                size: 'm',
+                                                                type: 'link',
+                                                                theme: 'pinguin'
+                                                            },
+                                                            type: 'link',
+                                                            text: 'Заполнить бриф'
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        } // feedback
                     }
                 }
             ] // content-content
