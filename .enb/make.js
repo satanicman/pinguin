@@ -20,6 +20,7 @@ var techs = {
         bemjsonToHtml: require('enb-bemxjst/techs/bemjson-to-html')
     },
     enbBemTechs = require('enb-bem-techs'),
+    beautify = require('enb-beautify/techs/enb-beautify-html'),
     levels = [
         { path: 'node_modules/bem-core/common.blocks', check: false },
         { path: 'node_modules/bem-core/desktop.blocks', check: false },
@@ -29,10 +30,44 @@ var techs = {
         { path: 'node_modules/bem-components/design/desktop.blocks', check: false },
         'common.blocks',
         'desktop.blocks'
-    ];
+    ],
+
+    fse = require('fs-extra'),
+    path = require('path'),
+    glob = require('glob'),
+
+    rootDir = path.join(__dirname, '..');
 
 module.exports = function(config) {
-    var isProd = process.env.YENV === 'production';
+    var isProd = true;
+
+    config.task('dist', function (task) {
+
+        // build targets and copy it to 'dist' folder
+        function copyTargets(buildInfo) {
+            buildInfo.builtTargets.forEach(function (target) {
+                var src = path.join(rootDir, target),
+                    dst = path.join(rootDir, 'dist', path.basename(target));
+
+                fse.copySync(src, dst);
+            });
+        }
+
+        return task.buildTargets(glob.sync('*.bundles/*'))
+            .then(function (buildInfo) {
+                copyTargets(buildInfo);
+                task.log('Dist was created.');
+            });
+    });
+
+    config.mode('production', function() {
+        config.nodes('*.bundles/*', function(nodeConfig) {
+            nodeConfig.addTechs([
+                // html beautify
+                [beautify, { htmlFile: '_?.pre.html', target: '?.html' }]
+            ]);
+        });
+    });
 
     config.nodes('*.bundles/*', function(nodeConfig) {
         nodeConfig.addTechs([
@@ -72,7 +107,7 @@ module.exports = function(config) {
             }],
 
             // html
-            [techs.bemjsonToHtml],
+            [techs.bemjsonToHtml, { target: '?.pre.html' }],
 
             // client bemhtml
             [enbBemTechs.depsByTechToBemdecl, {
@@ -105,7 +140,8 @@ module.exports = function(config) {
 
             // borschik
             [techs.borschik, { source: '?.js', target: '?.min.js', minify: isProd }],
-            [techs.borschik, { source: '?.css', target: '?.min.css', minify: isProd }]
+            [techs.borschik, { source: '?.css', target: '?.min.css', minify: isProd }],
+            [techs.borschik, { source: '?.pre.html', target: '?.html' }]
         ]);
 
         nodeConfig.addTargets([/* '?.bemtree.js', */ '?.html', '?.min.css', '?.min.js']);
