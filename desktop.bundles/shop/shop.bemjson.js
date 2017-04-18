@@ -79,7 +79,7 @@ module.exports = {
                             ]
                         } // shop-top
                     }
-                },
+                }, // shop-top
                 {
                     elem: 'line',
                     elemMods: {
@@ -166,7 +166,92 @@ module.exports = {
                             ]
                         } // shop-top
                     }
-                }
+                }, // shop-services
+                {
+                    elem: 'line',
+                    elemMods: {
+                        theme: 'shop-advantages'
+                    },
+                    content: {
+                        block: 'row',
+                        mix: {block: 'content', elem: 'line-in'},
+                        content: [
+                            {
+                                block: 'image',
+                                mix: {block: 'content', elem: 'image', elemMods: {block: 'advantages'}},
+                                url: "../../img/advantages.png"
+                            },
+                            {
+                                block: 'shop-advantages',
+                                mix: [
+                                    {block: 'row', elem: 'col', elemMods: {mw: 12}},
+                                    {block: 'row'}
+                                ],
+                                content: [
+                                    {
+                                        elem: 'col',
+                                        mix: {block: 'row', elem: 'col', elemMods: {mw: 6}},
+                                        elemModes: {side: 'right'},
+                                        content: [
+                                            {
+                                                block: 'image',
+                                                mods: {responsive: true},
+                                                mix: {block: 'shop-advantages', elem: 'image'},
+                                                alt: 'shop-advantages image',
+                                                url: '../../img/shop-advantages.png'
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        elem: 'col',
+                                        mix: {block: 'row', elem: 'col', elemMods: {mw: 6}},
+                                        elemMods: {side: 'right'},
+                                        content: [
+                                            {
+                                                block: 'title',
+                                                content: 'Почему стоит<br>заказать у нас',
+                                                tag: 'h3'
+                                            },
+                                            {
+                                                block: 'icon-list',
+                                                mix: {block: 'shop-advantages', elem: 'icon-list'},
+                                                content: [
+                                                    {text: 'Работаем по понятным правилам: Заключаем <b>договор</b>, составляем <b>техническое задание</b>, контролируем <b>качество</b>.', icon: 'tz'},
+                                                    {text: '<b>7 лет опыта</b> создания интернет-магазинов , ряд своих собственных наработок и эффективных решений.', icon: 'experience'},
+                                                    {text: 'Личный <b>менеджер</b> под Ваш проект, обучение работе с административной частью и поддержка после сдачи сайта.', icon: 'manager'},
+                                                    {text: 'Внедряем <b>адаптивный дизайн</b> во все свои проекты. сайт отлично отображается на любых устройствах.', icon: 'adapt-design'},
+                                                    {text: '<b>Хостинг</b> на год в подарок.', icon: 'hosting'},
+                                                ].map(function(element, ids) {
+                                                    var id = ids + 1;
+                                                    return {
+                                                        elem: 'item',
+                                                        mix: {block: 'row', mods: {mvam: true}},
+                                                        content: [
+                                                            {
+                                                                elem: 'icon',
+                                                                content: {
+                                                                    block: 'icon',
+                                                                    mods: {
+                                                                        type: element.icon
+                                                                    }
+                                                                }
+                                                            },
+                                                            {
+                                                                block: 'text',
+                                                                mix: {block: 'icon-list', elem: 'text'},
+                                                                content: id + '. ' + element.text
+                                                            }
+                                                        ]
+                                                    };
+                                                })
+                                            }
+                                        ]
+                                    }
+                                ]
+                            } // shop-top
+                        ]
+                    }
+                } // shop-advantages
             ]
         },
         require('../footer/footer.bemjson.js')
