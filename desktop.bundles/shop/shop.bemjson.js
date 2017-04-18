@@ -50,6 +50,9 @@ module.exports = {
                                     content: [
                                         {
                                             elem: 'title',
+                                            mods: {
+                                                'upper': true
+                                            },
                                             content: 'Интернет магазин —'
                                         },
                                         {
@@ -103,6 +106,9 @@ module.exports = {
                                     content: [
                                         {
                                             block: 'title',
+                                            mods: {
+                                                'upper': true
+                                            },
                                             content: 'Что предлагаем',
                                             tag: 'h3'
                                         },
@@ -209,6 +215,9 @@ module.exports = {
                                         content: [
                                             {
                                                 block: 'title',
+                                                mods: {
+                                                    'upper': true
+                                                },
                                                 content: 'Почему стоит<br>заказать у нас',
                                                 tag: 'h3'
                                             },
@@ -251,7 +260,76 @@ module.exports = {
                             } // shop-top
                         ]
                     }
-                } // shop-advantages
+                }, // shop-advantages
+                {
+                    elem: 'line',
+                    elemMods: {
+                        color: 'white',
+                        theme: 'shop-prices'
+                    },
+                    content: {
+                        block: 'row',
+                        mix: {block: 'content', elem: 'line-in'},
+                        content: [
+                            {
+                                block: 'shop-prices',
+                                mix: [
+                                    {block: 'row', elem: 'col', elemMods: {mw: 12}}
+                                ],
+                                content: [
+                                    {
+                                        block: 'title',
+                                        mods: {
+                                            'upper': true
+                                        },
+                                        tag: 'h3',
+                                        content: 'Сколько стоит заказать<br>интернет-магазин'
+                                    },
+                                    {
+                                        block: 'prices',
+                                        mix: {
+                                            block: 'shop-prices',
+                                            elem: 'prices'
+                                        },
+                                        content: [
+                                            {name: 'Индивидуальный проект', price: '<b>от</b> 20 000 <b>грн.</b>', link: '#'},
+                                            {name: 'Предложение “Быстрый старт”', price: '17 000 <b>грн.</b>', link: '#'}
+                                        ].map(function(element) {
+                                            return {
+                                                elem: 'element',
+                                                content: [
+                                                    {
+                                                        elem: 'price',
+                                                        content: element.price
+                                                    },
+                                                    {
+                                                        elem: 'name',
+                                                        content: element.name
+                                                    },
+                                                    {
+                                                        block: 'button',
+                                                        mix: {
+                                                            block: 'prices',
+                                                            elem: 'button'
+                                                        },
+                                                        mods: {
+                                                            size: 'l',
+                                                            type: 'link',
+                                                            theme: 'pinguin'
+                                                        },
+                                                        url: element.link,
+                                                        title: 'Подробнее',
+                                                        text: 'Подробнее'
+                                                    }
+                                                ]
+                                            }
+                                        })
+                                    }
+                                ]
+                            } // shop-top
+                        ]
+                    }
+                } // shop-prices
             ]
         },
         require('../footer/footer.bemjson.js')
