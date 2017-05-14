@@ -1,3 +1,0 @@
-block('contacts').elem('text')(
-    tag()('span')
-);

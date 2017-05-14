@@ -71,13 +71,13 @@ module.exports = ([
                                 ] // main-menu-content
                             }, // main-menu
                             {
-                                block: 'contacts',
-                                mix: {block: 'header', elem: 'contacts'},
+                                block: 'header-contacts',
+                                mix: {block: 'header', elem: 'header-contacts'},
                                 content: [
                                     {
                                         block: 'button',
                                         mix: {
-                                            block: 'contacts',
+                                            block: 'header-contacts',
                                             elem: 'element'
                                         },
                                         mods: {
@@ -102,7 +102,7 @@ module.exports = ([
                                     {
                                         block: 'button',
                                         mix: {
-                                            block: 'contacts',
+                                            block: 'header-contacts',
                                             elem: 'element'
                                         },
                                         mods: {
@@ -132,7 +132,7 @@ module.exports = ([
                                     //     content: [
                                     //         {
                                     //             block: 'icon',
-                                    //             mix: {block: 'contacts', elem: 'icon'},
+                                    //             mix: {block: 'header-contacts', elem: 'icon'},
                                     //             mods: {
                                     //                 type: 'cloud'
                                     //             }
@@ -151,7 +151,7 @@ module.exports = ([
                                     //     content: [
                                     //         {
                                     //             block: 'icon',
-                                    //             mix: {block: 'contacts', elem: 'icon'},
+                                    //             mix: {block: 'header-contacts', elem: 'icon'},
                                     //             mods: {
                                     //                 type: 'phone'
                                     //             }
@@ -162,7 +162,7 @@ module.exports = ([
                                     //         }
                                     //     ] // element-content
                                     // } // element
-                                ] // contacts-content
+                                ] // header-contacts-content
                             }
                         ]
                     }

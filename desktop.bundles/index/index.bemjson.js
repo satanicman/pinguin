@@ -109,6 +109,7 @@ module.exports = {
                                 },
                                 {
                                     block: 'lamp',
+                                    js: true,
                                     content: [
                                         {
                                             elem: 'image'

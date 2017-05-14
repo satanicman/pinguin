@@ -33,6 +33,13 @@ var techs = {
         'desktop.blocks'
     ],
 
+    pages = [
+        'desktop.bundles/index',
+        'desktop.bundles/shop',
+        'desktop.bundles/portfolio',
+        'desktop.bundles/contacts'
+    ],
+
     fse = require('fs-extra'),
     path = require('path'),
     glob = require('glob'),
@@ -54,7 +61,7 @@ module.exports = function(config) {
             });
         }
 
-        return task.buildTargets(glob.sync('*.bundles/*'))
+        return task.buildTargets(pages)
             .then(function (buildInfo) {
                 copyTargets(buildInfo);
                 task.log('Dist was created.');
